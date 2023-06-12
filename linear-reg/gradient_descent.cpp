@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-#include<array>
-
 
 double prediction(std::vector<int> x, double* b){
     double pred = b[0];
@@ -73,13 +71,10 @@ int main(){
     std::vector<int> Y;
     X = {{1,1},{2,3},{2,4},{3,2},{4,5},{5,11}};
     Y = {2,5,6,5,9,16};
-    double *b = gradient_descent(X,Y,1000,0.01);
-    std::cout << b[0] << " " << b[1] << "\n";
+    double *b = gradient_descent(X,Y,100,0.01);
     int m = X.size();  
     for (int i = 0;i < m;i++){
         std::cout << prediction(X[i],b) << " ";
         if (i == m-1) std::cout << "\n";
-    }
-
-    
+    }  
 }
